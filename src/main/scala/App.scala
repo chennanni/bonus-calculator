@@ -18,32 +18,34 @@ object App {
 
     println("==========Load tables==========")
 
+    val filePathParent = "F:\\CODEBASE\\bonus-calculator\\src\\main\\resources\\"
+
     println("Loading table: Performance Metrics")
-    val dfPerformanceMetrics: DataFrame = readCsv("src/main/resources/static_tables/Performance_Metrics.csv", spark)
+    val dfPerformanceMetrics: DataFrame = readCsv(filePathParent + "static_tables\\Performance_Metrics.csv", spark)
     dfPerformanceMetrics.show()
 
     println("Loading table: Attendance Metrics")
-    val dfAttendanceMetrics: DataFrame = readCsv("src/main/resources/static_tables/Attendance_Metrics.csv", spark)
+    val dfAttendanceMetrics: DataFrame = readCsv(filePathParent + "static_tables\\Attendance_Metrics.csv", spark)
     dfAttendanceMetrics.show()
 
     println("Loading table: Profit")
-    val dfProfit: DataFrame = readCsv("src/main/resources/dynamic_tables/Profit.csv", spark)
+    val dfProfit: DataFrame = readCsv(filePathParent + "dynamic_tables\\Profit.csv", spark)
     dfProfit.show()
 
     println("Loading table: Overtime")
-    val dfOvertime: DataFrame = readCsv("src/main/resources/dynamic_tables/Overtime.csv", spark)
+    val dfOvertime: DataFrame = readCsv(filePathParent + "dynamic_tables\\Overtime.csv", spark)
     dfOvertime.show()
 
     println("Loading table: Salary")
-    val dfSalary: DataFrame = readCsv("src/main/resources/dynamic_tables/Salary.csv", Schema.schemaSalary, spark)
+    val dfSalary: DataFrame = readCsv(filePathParent + "dynamic_tables\\Salary.csv", Schema.schemaSalary, spark)
     dfSalary.show()
 
     println("Loading table: Performance")
-    val dfPerformance: DataFrame = readCsv("src/main/resources/dynamic_tables/Performance.csv", Schema.schemaPerformance, spark)
+    val dfPerformance: DataFrame = readCsv(filePathParent + "dynamic_tables\\Performance.csv", Schema.schemaPerformance, spark)
     dfPerformance.show()
 
     println("Loading table: Attendance")
-    val dfAttendance: DataFrame = readCsv("src/main/resources/dynamic_tables/Attendance.csv", Schema.schemaAttendance, spark)
+    val dfAttendance: DataFrame = readCsv(filePathParent + "dynamic_tables\\Attendance.csv", Schema.schemaAttendance, spark)
     dfAttendance.show()
 
     println("==========Calculation==========")
